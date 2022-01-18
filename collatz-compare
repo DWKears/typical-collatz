@@ -1,6 +1,8 @@
 #a space to compare different properties of collatz structures
 import matplotlib.pyplot as plt
 
+#-------------------
+
 #comparing sequence length to sequence sum
 max_seed = 1024
 seq_lengths = []
@@ -11,4 +13,11 @@ for seed in range(max_seed):
     seq_sums.append(x.sum)
 
     
-plt.scatter(seq_lengths,seq_sums)
+#plt.scatter(seq_lengths,seq_sums)  #harder t interpret for large max seeds
+
+fig = plt.plot()
+ax = plt.gca()
+ax.scatter(seq_lengths,seq_sums,s = 2)
+ax.set_yscale('log')
+
+#-------------------
