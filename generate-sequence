@@ -1,11 +1,11 @@
 class Collatz:
     def __init__(self,seed):
-        self.seq = [seed]
-        while self.seq[-1] != 1:  #generating collatz sequence iteratively using definition below
+        self.seq = [seed]  #generating collatz sequence iteratively using definition below
+        while self.seq[-1] != 1:
             self.seq.append(int((self.seq[-1]%2)*(3*self.seq[-1]+1) + ((self.seq[-1]+1)%2)*(self.seq[-1]/2)))
         self.length = len(self.seq)
-        self.series = [seed]
+        self.series = [seed]  #generating additive series from collatz sequence
         for n in self.seq[1:self.length]:
             self.series.append(self.series[-1]+n)
-            
+        self.sum = self.series[-1]
             
