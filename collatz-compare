@@ -1,0 +1,14 @@
+#a space to compare different properties of collatz structures
+import matplotlib.pyplot as plt
+
+#comparing sequence length to sequence sum
+max_seed = 1024
+seq_lengths = []
+seq_sums = []
+for seed in range(max_seed):
+    x = Collatz(seed+1)
+    seq_lengths.append(x.length)
+    seq_sums.append(x.sum)
+
+    
+plt.scatter(seq_lengths,seq_sums)
